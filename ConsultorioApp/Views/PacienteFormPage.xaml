@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ConsultorioApp.Views.PacienteFormPage"
+             Title="Cadastro de Paciente">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <Label Text="Novo Paciente" 
+                   FontSize="22" 
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" />
+
+            <Entry x:Name="NomeEntry" 
+                   Placeholder="Nome completo" />
+
+            <DatePicker x:Name="NascimentoPicker" 
+                        MaximumDate="{x:Static sys:DateTime.Now}"
+                        xmlns:sys="clr-namespace:System;assembly=netstandard" />
+
+            <Entry x:Name="TelefoneEntry" 
+                   Placeholder="Telefone" 
+                   Keyboard="Telephone" />
+
+            <Entry x:Name="EmailEntry" 
+                   Placeholder="E-mail" 
+                   Keyboard="Email" />
+
+            <Editor x:Name="ObsEditor" 
+                    Placeholder="Observações" 
+                    AutoSize="TextChanges"
+                    HeightRequest="80" />
+
+            <Button Text="Salvar" 
+                    Clicked="OnSalvarClicked"
+                    BackgroundColor="#0078D7"
+                    TextColor="White"
+                    CornerRadius="8" />
+
+            <Button Text="Cancelar" 
+                    Clicked="OnCancelarClicked"
+                    BackgroundColor="#CCC"
+                    TextColor="Black"
+                    CornerRadius="8" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

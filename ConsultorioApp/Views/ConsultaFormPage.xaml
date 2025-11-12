@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ConsultorioApp.Views.ConsultaFormPage"
+             Title="Nova Consulta">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <Label Text="Agendar Consulta" 
+                   FontSize="22" 
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" />
+
+            <Entry x:Name="PacienteEntry" Placeholder="Nome do paciente" />
+
+            <DatePicker x:Name="DataPicker"
+                        Date="{x:Static sys:DateTime.Now}"
+                        xmlns:sys="clr-namespace:System;assembly=netstandard" />
+
+            <TimePicker x:Name="HoraPicker" Time="09:00" />
+
+            <Editor x:Name="ObsEditor" 
+                    Placeholder="Observações"
+                    AutoSize="TextChanges"
+                    HeightRequest="80" />
+
+            <Button Text="Salvar" 
+                    Clicked="OnSalvarClicked"
+                    BackgroundColor="#0078D7"
+                    TextColor="White"
+                    CornerRadius="8" />
+
+            <Button Text="Cancelar" 
+                    Clicked="OnCancelarClicked"
+                    BackgroundColor="#CCC"
+                    TextColor="Black"
+                    CornerRadius="8" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
