@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AppMAUIGallery.Views.Layouts.FlexLayoutPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="FlexLayoutPage">
+    <FlexLayout
+        AlignContent="SpaceEvenly"
+        AlignItems="Start"
+        Direction="Row"
+        JustifyContent="Start"
+        Wrap="Wrap">
+        <Label
+            Padding="10"
+            BackgroundColor="RosyBrown"
+            FlexLayout.Grow="1"
+            FlexLayout.Order="1"
+            Text="Linha 1" />
+        <Label
+            Padding="10"
+            BackgroundColor="SandyBrown"
+            FlexLayout.AlignSelf="Center"
+            FlexLayout.Basis="20%"
+            FlexLayout.Order="0"
+            Text="Linha 2" />
+        <Label
+            Padding="10"
+            BackgroundColor="SaddleBrown"
+            FlexLayout.AlignSelf="End"
+            FlexLayout.Order="3"
+            Text="Linha 3"
+            TextColor="White" />
+        <Label
+            Padding="10"
+            BackgroundColor="Black"
+            FlexLayout.AlignSelf="Stretch"
+            FlexLayout.Grow="1"
+            FlexLayout.Order="2"
+            Text="Linha 4"
+            TextColor="White" />
+        <Label
+            Padding="10"
+            BackgroundColor="Aquamarine"
+            FlexLayout.Shrink="0"
+            Text="Linha 5" />
+        <Label
+            Padding="10"
+            BackgroundColor="Aquamarine"
+            Text="Linha 6" />
+        <Label
+            Padding="10"
+            BackgroundColor="Aquamarine"
+            Text="Linha 7" />
+        <Label
+            Padding="10"
+            BackgroundColor="Aquamarine"
+            Text="Linha 8" />
+        <Label
+            Padding="10"
+            BackgroundColor="Aquamarine"
+            FlexLayout.Shrink="0"
+            Text="Linha 9" />
+
+
+    </FlexLayout>
+</ContentPage>

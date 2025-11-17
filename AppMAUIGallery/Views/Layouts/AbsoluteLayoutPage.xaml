@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AppMAUIGallery.Views.Layouts.AbsoluteLayoutPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="AbsoluteLayoutPage">
+
+    <AbsoluteLayout>
+
+        <Label
+            AbsoluteLayout.LayoutBounds="150, 0, 100, 100"
+            BackgroundColor="Gray"
+            Text="Olá mundo!" />
+        <Button
+            AbsoluteLayout.LayoutBounds="0.5, 0.5, 0.3, 0.3"
+            AbsoluteLayout.LayoutFlags="All"
+            Text="Clique-me" />
+        <BoxView
+            AbsoluteLayout.LayoutBounds="150, 200"
+            HeightRequest="50"
+            WidthRequest="50"
+            Color="LightBlue" />
+        <BoxView
+            AbsoluteLayout.LayoutBounds="175, 225"
+            HeightRequest="50"
+            WidthRequest="50"
+            Color="Blue" />
+        <BoxView
+            AbsoluteLayout.LayoutBounds="200, 250"
+            HeightRequest="50"
+            WidthRequest="50"
+            Color="Green" />
+        <BoxView
+            AbsoluteLayout.LayoutBounds="225, 275"
+            HeightRequest="50"
+            WidthRequest="50"
+            Color="Yellow" />
+        <BoxView
+            AbsoluteLayout.LayoutBounds="250, 300"
+            HeightRequest="50"
+            WidthRequest="50"
+            Color="Red" />
+
+
+
+
+
+    </AbsoluteLayout>
+
+
+</ContentPage>
