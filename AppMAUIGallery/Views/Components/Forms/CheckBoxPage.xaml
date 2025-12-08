@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AppMAUIGallery.Views.Components.Forms.CheckBoxPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="CheckBoxPage">
+    <VerticalStackLayout>
+        <Label
+            HorizontalOptions="Center"
+            Text="Qual a linguagem que você mais gosta?"
+            VerticalOptions="Center" />
+        <HorizontalStackLayout>
+            <CheckBox
+                CheckedChanged="CheckBox_CheckedChanged"
+                IsChecked="False"
+                Color="Purple" />
+            <Label Text="PHP" VerticalOptions="Center" />
+        </HorizontalStackLayout>
+        <HorizontalStackLayout>
+            <CheckBox
+                CheckedChanged="CheckBox_CheckedChanged"
+                IsChecked="False"
+                Color="Blue" />
+            <Label Text="C#" VerticalOptions="Center" />
+        </HorizontalStackLayout>
+        <HorizontalStackLayout>
+            <CheckBox
+                CheckedChanged="CheckBox_CheckedChanged"
+                IsChecked="False"
+                Color="Red" />
+            <Label Text="Java" VerticalOptions="Center" />
+        </HorizontalStackLayout>
+        <Label x:Name="LblStatus" Text="" />
+    </VerticalStackLayout>
+</ContentPage>

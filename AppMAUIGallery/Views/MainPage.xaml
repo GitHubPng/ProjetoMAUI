@@ -5,9 +5,10 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="MainPage">
     <VerticalStackLayout>
+        <Button Text="Clique-me" />
         <Label
             HorizontalOptions="Center"
-            Text="Conteúdo da Página inicial"
+            Text="Conteúdo da Página inicial (MainPage)"
             VerticalOptions="Center" />
     </VerticalStackLayout>
 </ContentPage>

@@ -1,7 +1,10 @@
-﻿namespace ConsultorioApp.Models;
+﻿using SQLite;
+
+namespace ConsultorioApp.Models;
 
 public class Consulta
 {
+    [PrimaryKey, AutoIncrement]
     public int Id { get; set; }
     public string Paciente { get; set; }
     public DateTime Data { get; set; }

@@ -9,31 +9,37 @@
     <StackLayout
         Margin="20"
         Padding="20"
-        Spacing="10"
         BackgroundColor="AliceBlue"
-        Orientation="Vertical">
+        Orientation="Vertical"
+        Spacing="10">
         <Label Text="Olá mundo" />
 
 
-        <StackLayout Spacing="10" Orientation="Horizontal">
-            <Button Text="Olá mundo 1!"  HorizontalOptions="Start"/>
-            <Button Text="Olá mundo 2!" HorizontalOptions="Start" />
+        <StackLayout Orientation="Horizontal" Spacing="10">
+            <Button HorizontalOptions="Start" Text="Olá mundo 1!" />
+            <Button HorizontalOptions="Start" Text="Olá mundo 2!" />
         </StackLayout>
 
-        <VerticalStackLayout Spacing="10"  Padding="10" BackgroundColor="Aquamarine">
+        <VerticalStackLayout
+            Padding="10"
+            BackgroundColor="Aquamarine"
+            Spacing="10">
             <Label Text="Olá Mundo 1!" />
             <Label Text="Olá Mundo 2!" />
         </VerticalStackLayout>
 
-        <HorizontalStackLayout Spacing="20" Padding="10" BackgroundColor="Aquamarine">
+        <HorizontalStackLayout
+            Padding="10"
+            BackgroundColor="Aquamarine"
+            Spacing="20">
             <Label Text="Olá Mundo 1!" />
             <Label Text="Olá Mundo 2!" />
         </HorizontalStackLayout>
 
         <Button
-            Text="Olá mundo!"
             HeightRequest="100"
             HorizontalOptions="Center"
+            Text="Olá mundo!"
             WidthRequest="200" />
     </StackLayout>
 </ContentPage>

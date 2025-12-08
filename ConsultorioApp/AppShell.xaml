@@ -13,4 +13,11 @@
         Title="Agenda"
         ContentTemplate="{DataTemplate local:AgendaPage}" />
 
+    <!-- Rotas para navegação -->
+    <Shell.Resources>
+        <ResourceDictionary>
+            <!-- Registra as rotas aqui se necessário -->
+        </ResourceDictionary>
+    </Shell.Resources>
+
 </Shell>

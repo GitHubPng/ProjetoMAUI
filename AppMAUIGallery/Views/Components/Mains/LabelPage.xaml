@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AppMAUIGallery.Views.Components.Mains.LabelPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="LabelPage">
+    <VerticalStackLayout>
+        <Label
+            Padding="10"
+            BackgroundColor="Gray"
+            HorizontalOptions="FillAndExpand"
+            HorizontalTextAlignment="Center"
+            Text="TEXT" />
+        <Label
+            Padding="10"
+            Text="Welcome to .NET MAUI!"
+            TextColor="#FF0000"
+            TextDecorations="Underline"
+            TextTransform="Lowercase" />
+        <Label
+            Padding="10"
+            FontAttributes="Italic"
+            FontFamily="OpenSansSemibold"
+            FontSize="20"
+            Text="Bem vindo ao .NET MAUI!" />
+        <Label
+            LineBreakMode="TailTruncation"
+            LineHeight="1"
+            MaxLines="2"
+            Text="Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos." />
+        <Label Padding="10">
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span
+                        FontAttributes="Bold"
+                        Text="Lorem Ipsum"
+                        TextColor="Blue"
+                        TextDecorations="Underline" />
+                    <Span FontAttributes="Italic" Text=" dolor sit amet consectetur adipiscing elit." />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        <Label
+            Padding="10"
+            BackgroundColor="#f2f2f2"
+            FontAttributes="Bold"
+            FontSize="20"
+            HeightRequest="150"
+            HorizontalOptions="FillAndExpand"
+            HorizontalTextAlignment="Center"
+            Text=".NET MAUI"
+            VerticalTextAlignment="Center" />
+        <Label
+            Padding="10"
+            BackgroundColor="Gray"
+            HorizontalOptions="FillAndExpand"
+            HorizontalTextAlignment="Center"
+            Text="HTML" />
+        <Label
+            Padding="10"
+            BackgroundColor="LightGray"
+            Text="Bem vindo ao &#34;.NET MAU!&#34;! &lt;i&gt;Você está gostando do MAUI?&lt;/i&gt;"
+            TextType="Html" />
+        <Label BackgroundColor="LightGray" TextType="Html">
+            <Label.Text>
+
+                <![CDATA[
+                <i>Olá mundo!</i> <br /> <strong>Como vai você?</strong>
+                
+                
+                ]]>
+            </Label.Text>
+        </Label>
+
+    </VerticalStackLayout>
+</ContentPage>
