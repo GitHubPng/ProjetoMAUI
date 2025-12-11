@@ -12,11 +12,5 @@
             SelectedIndex="0" />
 
         <Button Clicked="Button_Clicked" Text="Carregar" />
-            <Label
-            BackgroundColor="Gray"
-            x:Name="InfoMovie"
-            Margin="10"
-            Text=""
-            />
     </VerticalStackLayout>
 </ContentPage>

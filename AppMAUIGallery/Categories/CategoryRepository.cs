@@ -215,6 +215,11 @@ namespace AppMAUIGallery.Categories {
                         Description = "Apresenta uma lista de itens.",
                         Page = typeof(ListViewPage)
                     },
+                    new Component {
+                        Title = "CollectionView",
+                        Description = "Apresenta uma lista de itens.",
+                        Page = typeof(CollectionViewPage)
+                    },
                 }
             });
             return categories;
