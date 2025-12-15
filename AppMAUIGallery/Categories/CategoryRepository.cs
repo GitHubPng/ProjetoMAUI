@@ -220,6 +220,16 @@ namespace AppMAUIGallery.Categories {
                         Description = "Apresenta uma lista de itens.",
                         Page = typeof(CollectionViewPage)
                     },
+                    new Component {
+                        Title = "CarouselView",
+                        Description = "Apresenta uma lista de itens horizontais com navegação lateral.",
+                        Page = typeof(CarouselViewPage)
+                    },
+                    new Component {
+                        Title = "BindableLayout (Atributo)",
+                        Description = "Permite que os layouts possam apresentar nossas listas e coleções.;",
+                        Page = typeof(BindableLayoutPage)
+                    },
                 }
             });
             return categories;

@@ -14,11 +14,13 @@
                 Scrolled="CollectionViewControl_Scrolled"
                 SelectionChanged="CollectionViewControl_SelectionChanged"
                 SelectionMode="Multiple">
+
                 <CollectionView.Header>
                     <Label x:Name="LblSelectedMovies" />
                 </CollectionView.Header>
+
                 <CollectionView.ItemsLayout>
-                    <LinearItemsLayout Orientation="Vertical"/>
+                    <LinearItemsLayout Orientation="Vertical" />
                 </CollectionView.ItemsLayout>
 
                 <CollectionView.GroupHeaderTemplate>
@@ -64,14 +66,11 @@
             HorizontalOptions="End"
             Text="Vá para o filme 8"
             VerticalOptions="Start" />
-        <Label x:Name="LblScrollStatus"
-            
-               Padding="10"
-               BackgroundColor="LightGray"
-               HorizontalOptions="End"
-               VerticalOptions="End"
-               
-               />
-
+        <Label
+            x:Name="LblScrollStatus"
+            Padding="10"
+            BackgroundColor="LightGray"
+            HorizontalOptions="End"
+            VerticalOptions="End" />
     </Grid>
 </ContentPage>
