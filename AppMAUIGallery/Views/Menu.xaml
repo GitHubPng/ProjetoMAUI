@@ -4,7 +4,6 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="Menu"
- 
     BackgroundColor="#f3F3F3">
 
     <CollectionView x:Name="MenuCollection" IsGrouped="True">
@@ -29,14 +28,24 @@
 
         <CollectionView.GroupHeaderTemplate>
             <DataTemplate>
-                <Label Text="{Binding Name}" FontAttributes="Bold" Margin="8, 0"/>
+                <Label
+                    Text="{Binding Name}"
+                    FontAttributes="Bold"
+                    Margin="16, 10"/>
             </DataTemplate>
         </CollectionView.GroupHeaderTemplate>
         <CollectionView.ItemTemplate>
             <DataTemplate>
-                <VerticalStackLayout Padding="30, 10">
-                    <Label Text="{Binding Title}"/>
-                    <Label Text="{Binding Description}" TextColor="{StaticResource Gray500}"/>
+                <VerticalStackLayout Padding="40, 10, 20, 10">
+                    <VerticalStackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnTapComponent" CommandParameter="{Binding Page}"/>
+                    </VerticalStackLayout.GestureRecognizers>
+                    <Label
+                        Text="{Binding Title}"
+                        FontAttributes="Bold"/>
+                    <Label
+                        Text="{Binding Description}"
+                        TextColor="{StaticResource Gray500}"/>
                 </VerticalStackLayout>
             </DataTemplate>
         </CollectionView.ItemTemplate>

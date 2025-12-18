@@ -15,10 +15,10 @@ public partial class Menu : ContentPage {
     }
 
 
-    private void OnTapComponent(object sender, EventArgs e) {
-        var label = (Label)sender;
-        var tap = (TapGestureRecognizer)label.GestureRecognizers[0];
-        var page = (Type)tap.CommandParameter;
+    private void OnTapComponent(object sender, TappedEventArgs e) {
+
+
+        var page = (Type)e.Parameter;
 
         ((FlyoutPage)App.Current.MainPage).Detail = new NavigationPage((Page)Activator.CreateInstance(page));
         ((FlyoutPage)App.Current.MainPage).IsPresented = false;
