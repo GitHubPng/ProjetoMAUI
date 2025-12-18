@@ -1,49 +1,20 @@
-using AppMAUIGallery.Categories;
+using AppMAUIGallery.Repositories;
 
 namespace AppMAUIGallery.Views;
 
 public partial class Menu : ContentPage {
-    private object lblComponentDescription;
-
+    private IGroupComponentRepository _repository;
     public Menu() {
 
         InitializeComponent();
 
-        var categories = new CategoryRepository().GetCategories();
+        //TODO - DI - Dependency Injection
+        _repository = new GroupComponentRepository();
+        MenuCollection.ItemsSource = _repository.GetGroupComponents();
 
-
-        foreach (var category in categories) {
-
-
-            var lblCategory = new Label();
-            lblCategory.Text = category.Name;
-            lblCategory.FontFamily = "OpenSansSemibold";
-
-            MenuContainer.Children.Add(lblCategory);
-
-            foreach (var component in category.Components) {
-                var tap = new TapGestureRecognizer();
-                tap.CommandParameter = component.Page;
-                tap.Tapped += OnTapComponent;
-
-                var lblComponentTitle = new Label();
-                lblComponentTitle.Text = component.Title;
-                lblComponentTitle.FontFamily = "OpenSansSemibold";
-                lblComponentTitle.Margin = new Thickness(20, 10, 0, 0);
-                lblComponentTitle.GestureRecognizers.Add(tap);
-
-
-                var lblComponentDescription = new Label();
-                lblComponentDescription.Text = component.Description;
-                lblComponentDescription.Margin = new Thickness(20, 0, 0, 10);
-                lblComponentDescription.GestureRecognizers.Add(tap);
-
-                MenuContainer.Children.Add(lblComponentTitle);
-                MenuContainer.Children.Add(lblComponentDescription);
-
-            }
-        }
     }
+
+
     private void OnTapComponent(object sender, EventArgs e) {
         var label = (Label)sender;
         var tap = (TapGestureRecognizer)label.GestureRecognizers[0];
