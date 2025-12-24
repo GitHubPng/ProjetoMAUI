@@ -4,10 +4,10 @@ using AppTask.Repositories;
 namespace AppTask.Views;
 
 public partial class StartPage : ContentPage
-    {
+{
     private ITaskModelRepository _repository;
     public StartPage()
-        {
+    {
         InitializeComponent();
 
         //TODO - Ponto de melhoria -> Implementar usando D.I.
@@ -18,30 +18,53 @@ public partial class StartPage : ContentPage
     private void LoadData()
     {
         var tasks = _repository.GetAll();
+
         CollectionViewTasks.ItemsSource = tasks;
         LblEmptyText.IsVisible = tasks.Count <= 0;
-        }
+    }
 
-    private void Button_Clicked(object sender, EventArgs e)
-        {
+    private void OnButtonClickedToAdd(object sender, EventArgs e)
+    {
         _repository.Add(new TaskModel
         {
-            Name = "",
-            Description = "",
+            Name = "Comprar Frutas",
+            Description = "Comprar abacate, laranja, maçã...",
             IsCompleted = false,
             Created = DateTime.Now,
             PrevisionDate = DateTime.Now.AddDays(2)
 
         });
         LoadData();
-        // Navigation.PushModalAsync(new AddEditTaskPage());
+        Navigation.PushModalAsync(new AddEditTaskPage());
 
 
 
-        }
+    }
 
-    private void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
-        {
+    private void OnBorderClickedToFocusEntry(object sender, TappedEventArgs e)
+    {
         Entry_Search.Focus();
+    }
+
+    [Obsolete]
+    private async void OnImageClickedToDelete(object sender, TappedEventArgs e)
+    {
+        var task = (TaskModel)e.Parameter;
+
+        var confirm = await DisplayAlert("Confirme a exclusão!", $"Tem certeza que deseja excluir essa tarefa: {task.Name}?", "Sim", "Não");
+
+        if (confirm)
+        {
+            _repository.Delete(task);
+            LoadData();
         }
     }
+
+    private void OnCheckBoxClickedToComplete(object sender, TappedEventArgs e)
+    {
+        var task = (TaskModel)e.Parameter;
+        task.IsCompleted = ((CheckBox)sender).IsChecked;
+        _repository.Update(task);
+
+    }
+}

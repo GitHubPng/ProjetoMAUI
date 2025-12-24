@@ -43,14 +43,17 @@ namespace AppTask
             Microsoft.Maui.Handlers.DatePickerHandler.Mapper.AppendToMapping("NoBorder", (handler, view) =>
             {
 #if ANDROID
-                //ANDROID
+                // ANDROID
                 handler.PlatformView.BackgroudTintList = Android.Content.Res.ColorStateList.ValueOf(Colors.Transparent.ToPlatform());
 
 #elif IOS || MACCATALYST
-                //IOS || MACCATALYST
-                handler.PlatformView.BorderStyle = UIKit.UITextBorderStyle.None;
+                // IOS || MACCATALYST
+                // UIDatePicker does not have BorderStyle. To remove border, set BackgroundColor and Layer properties.
+                handler.PlatformView.BackgroundColor = UIKit.UIColor.Clear;
+                handler.PlatformView.Layer.BorderWidth = 0;
+                handler.PlatformView.Layer.BorderColor = UIKit.UIColor.Clear.CGColor;
 #elif WINDOWS
-                //WINDOWS - Não funciona 100%
+                // WINDOWS - Não funciona 100%
                 handler.PlatformView.BorderThickness = new Thickness(0).ToPlatform();
 #endif
             });
