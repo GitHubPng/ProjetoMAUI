@@ -31,6 +31,7 @@
                     HeightRequest="33" />
                 <Entry
                     x:Name="Entry_Search"
+                    TextChanged="OnTextChanged_FiterList"
                     HorizontalOptions="FillAndExpand"
                     Placeholder="Pesquisar..."
                     PlaceholderColor="#A8A8A8" />
@@ -54,8 +55,11 @@
                                     CommandParameter="{Binding .}" />
                             </CheckBox.GestureRecognizers>
                         </CheckBox>
-                        <StackLayout
-                            Grid.Column="1">
+                        <StackLayout Grid.Column="1">
+                            <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnTapToEdit" CommandParameter="{Binding .}"/>
+                            </StackLayout.GestureRecognizers>
+                            
                             <Label
                                 FontAttributes="Bold"
                                 Text="{Binding Name}"

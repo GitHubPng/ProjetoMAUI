@@ -1,9 +1,29 @@
-﻿namespace AppTask.Models
+﻿using System.ComponentModel;
+
+namespace AppTask.Models
 {
-    public class SubTaskModel
+    public class SubTaskModel : INotifyPropertyChanged
     {
         public int Id { get; set; }
         public string Name { get; set; } = string.Empty;
-        public bool IsCompleted { get; set; }
+        private bool _isCompleted;
+        public bool IsCompleted
+        {
+            get { return _isCompleted; }
+            set
+            {
+                //Chamar a notificação
+                _isCompleted = value;
+                OnPropertyChanged(nameof(IsCompleted));
+            }
+        }
+
+        public event PropertyChangedEventHandler? PropertyChanged;
+
+        private void OnPropertyChanged(string propName)
+        {
+            if (PropertyChanged != null)
+                PropertyChanged(this, new PropertyChangedEventArgs(propName));
+        }
     }
 }

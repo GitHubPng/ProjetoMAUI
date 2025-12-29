@@ -6,6 +6,7 @@ namespace AppTask.Views;
 public partial class StartPage : ContentPage
 {
     private ITaskModelRepository _repository;
+    private IList<TaskModel> _tasks;
     public StartPage()
     {
         InitializeComponent();
@@ -15,38 +16,21 @@ public partial class StartPage : ContentPage
 
         LoadData();
     }
-    private void LoadData()
+    public void LoadData()
     {
-        var tasks = _repository.GetAll();
-
-        CollectionViewTasks.ItemsSource = tasks;
-        LblEmptyText.IsVisible = tasks.Count <= 0;
+        _tasks = _repository.GetAll();
+        CollectionViewTasks.ItemsSource = _tasks;
+        LblEmptyText.IsVisible = _tasks.Count <= 0;
     }
 
     private void OnButtonClickedToAdd(object sender, EventArgs e)
     {
-        _repository.Add(new TaskModel
-        {
-            Name = "Comprar Frutas",
-            Description = "Comprar abacate, laranja, maçã...",
-            IsCompleted = false,
-            Created = DateTime.Now,
-            PrevisionDate = DateTime.Now.AddDays(2)
-
-        });
-        LoadData();
         Navigation.PushModalAsync(new AddEditTaskPage());
-
-
-
     }
-
     private void OnBorderClickedToFocusEntry(object sender, TappedEventArgs e)
     {
         Entry_Search.Focus();
     }
-
-    [Obsolete]
     private async void OnImageClickedToDelete(object sender, TappedEventArgs e)
     {
         var task = (TaskModel)e.Parameter;
@@ -59,12 +43,26 @@ public partial class StartPage : ContentPage
             LoadData();
         }
     }
-
     private void OnCheckBoxClickedToComplete(object sender, TappedEventArgs e)
     {
+        var checkbox = ((CheckBox)sender);
         var task = (TaskModel)e.Parameter;
+
+        if (DeviceInfo.Platform != DevicePlatform.WinUI)
+            checkbox.IsChecked = !checkbox.IsChecked;
+
         task.IsCompleted = ((CheckBox)sender).IsChecked;
         _repository.Update(task);
 
+    }
+    private void OnTapToEdit(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
+    {
+        var task = (TaskModel)e.Parameter;
+        Navigation.PushModalAsync(new AddEditTaskPage(_repository.GetById(task.Id)));
+    }
+    private void OnTextChanged_FiterList(System.Object sender, Microsoft.Maui.Controls.TextChangedEventArgs e)
+    {
+        var word = e.NewTextValue;
+        CollectionViewTasks.ItemsSource = _tasks.Where(a => a.Name.ToLower().Contains(word.ToLower()));
     }
 }
