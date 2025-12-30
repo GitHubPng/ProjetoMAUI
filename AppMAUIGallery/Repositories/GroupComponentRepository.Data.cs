@@ -5,15 +5,14 @@ using AppMAUIGallery.Views.Components.Mains;
 using AppMAUIGallery.Views.Components.Visuals;
 using AppMAUIGallery.Views.Layouts;
 using AppMAUIGallery.Views.Lists;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using AppMAUIGallery.Views.Styles;
 
-namespace AppMAUIGallery.Repositories {
-    public partial class GroupComponentRepository : IGroupComponentRepository {
-        private void LoadData() {
+namespace AppMAUIGallery.Repositories
+{
+    public partial class GroupComponentRepository : IGroupComponentRepository
+    {
+        private void LoadData()
+        {
 
             _components = new List<Component>();
             _groupComponents = new List<GroupComponent>();
@@ -24,8 +23,10 @@ namespace AppMAUIGallery.Repositories {
             LoadForms();
             LoadCells();
             LoadCollections();
+            LoadStyles();
         }
-        private void LoadLayouts() {
+        private void LoadLayouts()
+        {
             var components = new List<Component> {
                     new Component {
                         Title = "StackLayout",
@@ -61,7 +62,8 @@ namespace AppMAUIGallery.Repositories {
             _groupComponents.Add(group);
 
         }
-        private void LoadControls() {
+        private void LoadControls()
+        {
 
             var components = new List<Component>
                 {
@@ -101,7 +103,8 @@ namespace AppMAUIGallery.Repositories {
             _components.AddRange(components);
             _groupComponents.Add(group);
         }
-        private void LoadVisuals() {
+        private void LoadVisuals()
+        {
             var components = new List<Component> {
                     new Component {
                         Title = "Frame",
@@ -126,7 +129,8 @@ namespace AppMAUIGallery.Repositories {
             _components.AddRange(components);
             _groupComponents.Add(group);
         }
-        private void LoadForms() {
+        private void LoadForms()
+        {
             var components = new List<Component> {
                     new Component {
                         Title = "Entry",
@@ -202,7 +206,8 @@ namespace AppMAUIGallery.Repositories {
             _components.AddRange(components);
             _groupComponents.Add(group);
         }
-        private void LoadCells() {
+        private void LoadCells()
+        {
             var components = new List<Component> {
                     new Component {
                         Title = "TextCell",
@@ -239,7 +244,8 @@ namespace AppMAUIGallery.Repositories {
             _components.AddRange(components);
             _groupComponents.Add(group);
         }
-        private void LoadCollections() {
+        private void LoadCollections()
+        {
             var components = new List<Component> {
                 new Component {
                     Title = "TableView",
@@ -282,6 +288,34 @@ namespace AppMAUIGallery.Repositories {
 
             _components.AddRange(components);
             _groupComponents.Add(group);
+        }
+        private void LoadStyles()
+        {
+            var components = new List<Component> {
+                    new Component {
+                        Title = "Implicit & Explicit Styles",
+                        Description = "Explicar como funciona os estilos.",
+                        Page = typeof(ImplicitExplicitStyles)
+                    },
+                    new Component {
+                        Title = "Global Style",
+                        Description = "Como criar estilos para todo o seu projeto.",
+                        Page = typeof(GlobalStyle)
+                    },
+                    new Component {
+                        Title = "ApplyToDerivedTypes",
+                        Description = "Aplicar um estilo aos elementos derivados da classe/componente atual.",
+                        Page = typeof(ApplyDerivedTypes)
+                    },
+            };
+
+            var group = new GroupComponent { Name = "Styles" };
+            group.AddRange(components);
+
+
+            _components.AddRange(components);
+            _groupComponents.Add(group);
+
         }
     }
 }
