@@ -1,10 +1,33 @@
-﻿<?xml version = "1.0" encoding = "UTF-8" ?>
-<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:AppMAUIGallery"
-             x:Class="AppMAUIGallery.App">
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Application
+    x:Class="AppMAUIGallery.App"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:AppMAUIGallery">
     <Application.Resources>
         <ResourceDictionary>
+            <!-- Implicit -->
+            <Style
+                TargetType="Label">
+                <Setter
+                    Property="FontSize"
+                    Value="14" />
+            </Style>
+            
+            <!-- Explicit -->
+            <Style
+                TargetType="Label"
+                x:Key="Title">
+                <Setter
+                    Property="FontSize"
+                    Value="32" />
+                <Setter
+                    Property="TextColor"
+                    Value="Red" />
+                <Setter
+                    Property="FontAttributes"
+                    Value="Bold" />
+            </Style>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />

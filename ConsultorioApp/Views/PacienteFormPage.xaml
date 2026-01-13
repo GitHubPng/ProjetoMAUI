@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sys="clr-namespace:System;assembly=System.Runtime"
              x:Class="ConsultorioApp.Views.PacienteFormPage"
              Title="Cadastro de Paciente">
 
@@ -13,24 +14,22 @@
                    HorizontalOptions="Center" />
 
             <Entry x:Name="NomeEntry" 
-                   Placeholder="Nome completo" />
+                   Placeholder="Nome completo"
+                   Text="{Binding Paciente.Nome}" />
 
             <DatePicker x:Name="NascimentoPicker" 
                         MaximumDate="{x:Static sys:DateTime.Now}"
-                        xmlns:sys="clr-namespace:System;assembly=netstandard" />
+                        Date="{Binding Paciente.DataNascimento}" />
 
             <Entry x:Name="TelefoneEntry" 
                    Placeholder="Telefone" 
-                   Keyboard="Telephone" />
+                   Keyboard="Telephone"
+                   Text="{Binding Paciente.Telefone}" />
 
             <Entry x:Name="EmailEntry" 
                    Placeholder="E-mail" 
-                   Keyboard="Email" />
-
-            <Editor x:Name="ObsEditor" 
-                    Placeholder="Observações" 
-                    AutoSize="TextChanges"
-                    HeightRequest="80" />
+                   Keyboard="Email"
+                   Text="{Binding Paciente.Email}" />
 
             <Button Text="Salvar" 
                     Clicked="OnSalvarClicked"

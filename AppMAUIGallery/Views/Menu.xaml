@@ -1,12 +1,53 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppMAUIGallery.Views.Menu"
-             Title="Menu">
-    <VerticalStackLayout>
-        <Label 
-            Text="Menu"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+<ContentPage
+    x:Class="AppMAUIGallery.Views.Menu"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Menu"
+    BackgroundColor="#f3F3F3">
+
+    <CollectionView x:Name="MenuCollection" IsGrouped="True">
+        <CollectionView.Header>
+            <VerticalStackLayout Padding="20, 0" Spacing="10">
+                <Label
+                Margin="30"
+                FontFamily="OpenSansSemibold"
+                FontSize="24"
+                HorizontalOptions="Center"
+                Text="MAUI Galllery"
+                VerticalOptions="Center" />
+                <Label Text="Inicio">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OntapInicio" />
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label Text="Extra" />
+                <Label Text="Créditos" />
+            </VerticalStackLayout>
+        </CollectionView.Header>
+
+        <CollectionView.GroupHeaderTemplate>
+            <DataTemplate>
+                <Label
+                    Text="{Binding Name}"
+                    FontAttributes="Bold"
+                    Margin="16, 10"/>
+            </DataTemplate>
+        </CollectionView.GroupHeaderTemplate>
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <VerticalStackLayout Padding="40, 10, 20, 10">
+                    <VerticalStackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnTapComponent" CommandParameter="{Binding Page}"/>
+                    </VerticalStackLayout.GestureRecognizers>
+                    <Label
+                        Text="{Binding Title}"
+                        FontAttributes="Bold"/>
+                    <Label
+                        Text="{Binding Description}"
+                        TextColor="{StaticResource Gray500}"/>
+                </VerticalStackLayout>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
 </ContentPage>

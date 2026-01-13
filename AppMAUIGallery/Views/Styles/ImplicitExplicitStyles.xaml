@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="AppMAUIGallery.Views.Styles.ImplicitExplicitStyles"
+    Title="ImplicitExplicitStyles">
+    <ContentPage.Resources>
+        <!-- Implicit -->
+        <Style
+            TargetType="Label">
+            <Setter
+                Property="TextColor"
+                Value="Red" />
+            <Setter
+                Property="Text"
+                Value="Oi tudo bem!" />
+        </Style>
+        
+        <!-- Explicit -->
+        
+        <Style
+            x:Key="StyleTitle"
+            TargetType="Label">
+            <Setter
+                Property="FontSize"
+                Value="24" />
+            <Setter
+                Property="TextColor"
+                Value="Black" />
+            <Setter
+                Property="HorizontalOptions"
+                Value="Center" />
+            <Setter
+                Property="Padding"
+                Value="0, 15, 0, 10" />
+        </Style>
+        <Style
+            TargetType="Label"
+            x:Key="StyleParagraph">
+            <Setter
+                Property="FontSize"
+                Value="12" />
+            <Setter
+                Property="TextColor"
+                Value="Blue" />
+            <Setter
+                Property="Padding"
+                Value="0, 5" />
+        </Style>
+    </ContentPage.Resources>
+    <ScrollView
+        Padding="20">
+        <VerticalStackLayout>
+            <Label
+                Text="Publicado em 23/04/2025" />
+            <Label
+                Text="Artigo 1"
+                Style="{StaticResource StyleTitle}" />
+            <Label
+                Text="Lorem ipsum dolor sit amet. Aut natus optio eum aliquam rerum rem nulla quas. Qui sapiente laborum vel corporis nemo ea ratione veritatis. Non tempora accusantium non voluptatem magni est consectetur nostrum sit consequatur rerum vel excepturi Quis et fugit veniam sit perspiciatis alias. Ex incidunt rerum in aspernatur dolore qui iusto veritatis non optio repudiandae. Sit laborum culpa a mollitia neque est repudiandae pariatur et necessitatibus blanditiis eos consequatur sunt sit molestiae consequuntur."
+                Style="{StaticResource StyleParagraph}" />
+            <Label
+                Text="Est cumque atque ut deserunt suscipit est quis omnis non dolores recusandae. Ab odit rerum sit sequi molestiae et similique perspiciatis et quibusdam debitis. Ut atque aliquam sed eaque velit aut veniam sapiente est odio omnis eum atque laudantium est quae assumenda! Ut labore quia a neque explicabo non blanditiis voluptatem ut nobis culpa et eligendi reprehenderit et enim quis et velit facilis? Et voluptatem magni in nobis vero est atque porro. Qui incidunt omnis vel labore molestiae ut blanditiis eaque qui accusantium quis in autem iusto! Et amet mollitia sit molestiae expedita est assumenda laborum ab quisquam enim et aperiam nulla."
+                Style="{StaticResource StyleParagraph}" />
+            <Label
+                Text="Artigo 2"
+                Style="{StaticResource StyleTitle}" />
+            <Label
+                Text="At sint sunt qui assumenda autem qui porro magnam ad perspiciatis quaerat et vero minima qui sapiente dolorem. Ab quae obcaecati sed earum soluta id minus voluptate ut corporis pariatur aut dolor perspiciatis in exercitationem omnis. Sed voluptas nemo eos galisum itaque ex quos dolor id amet omnis vel necessitatibus sint et enim obcaecati rem veniam sapiente? Sed illum similique ad officia quia in totam quae. Ut voluptatibus cupiditate et dolores sint qui incidunt voluptatibus non odit autem et tempora voluptas. Est dolor culpa est enim nesciunt est nihil inventore. Rem sequi magnam est omnis dignissimos et quisquam atque ut assumenda error et saepe culpa!"
+                Style="{StaticResource StyleParagraph}" />
+            <Label
+                Text="Et alias molestias qui autem quae ut illo perferendis qui illum neque. Et voluptate earum et incidunt deleniti ut fugit galisum non aliquam aperiam! Est voluptates enim sit sequi fugit et nisi quas et reiciendis porro ea quisquam illum. Qui tenetur debitis nam voluptatum fugit ut unde esse est dolores odio aut doloremque consequatur ut iusto odio hic atque omnis. Et expedita deserunt in iure distinctio ea velit accusantium ex nihil officia ea possimus voluptas. Aut minus nihil aut voluptatem rerum et assumenda nisi nam corrupti ducimus et omnis inventore sed aliquam corporis qui autem aliquam. Sit tenetur autem et quia voluptas eum necessitatibus sequi 33 libero vitae ut internos nobis ut labore itaque!"
+                Style="{StaticResource StyleParagraph}" />
+            <Label
+                Text="Qui nobis perferendis At maxime minima sed maiores molestiae ut inventore nulla. Ut animi cupiditate et ipsum corporis quo rerum consequatur aut error repudiandae cum odio odio. Qui eaque sint qui consequatur voluptate et dolor eius sed debitis ratione. Aut enim atque et ipsam veniam sed animi enim vel magnam dicta ut pariatur consequatur id veritatis autem. Aut quibusdam mollitia sit sapiente voluptas et porro modi ut mollitia nihil et magnam rerum. Id debitis illo ut delectus sint qui nemo optio aut dolorum tempore in fugit quos qui facilis explicabo sed delectus assumenda. Et voluptatem suscipit et fuga dolorem et dolore impedit."
+                Style="{StaticResource StyleParagraph}" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

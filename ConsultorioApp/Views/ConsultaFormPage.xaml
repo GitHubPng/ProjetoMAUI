@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sys="clr-namespace:System;assembly=System.Runtime"
              x:Class="ConsultorioApp.Views.ConsultaFormPage"
              Title="Nova Consulta">
 
@@ -12,18 +13,21 @@
                    FontAttributes="Bold"
                    HorizontalOptions="Center" />
 
-            <Entry x:Name="PacienteEntry" Placeholder="Nome do paciente" />
+            <Entry x:Name="PacienteEntry" 
+                   Placeholder="Nome do paciente"
+                   Text="{Binding Consulta.Paciente}" />
 
             <DatePicker x:Name="DataPicker"
-                        Date="{x:Static sys:DateTime.Now}"
-                        xmlns:sys="clr-namespace:System;assembly=netstandard" />
+                        Date="{Binding Consulta.Data}" />
 
-            <TimePicker x:Name="HoraPicker" Time="09:00" />
+            <TimePicker x:Name="HoraPicker" 
+                        Time="{Binding Consulta.Horario}" />
 
             <Editor x:Name="ObsEditor" 
                     Placeholder="Observações"
                     AutoSize="TextChanges"
-                    HeightRequest="80" />
+                    HeightRequest="80"
+                    Text="{Binding Consulta.Observacoes}" />
 
             <Button Text="Salvar" 
                     Clicked="OnSalvarClicked"

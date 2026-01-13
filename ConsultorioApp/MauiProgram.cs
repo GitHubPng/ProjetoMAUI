@@ -15,6 +15,25 @@ namespace ConsultorioApp {
     		builder.Logging.AddDebug();
 #endif
 
+            // Database
+            builder.Services.AddSingleton<Data.DatabaseContext>();
+
+            // Services
+            builder.Services.AddSingleton<Services.PacienteService>();
+            builder.Services.AddSingleton<Services.ConsultaService>();
+
+            // ViewModels
+            builder.Services.AddTransient<ViewModels.PacientesViewModel>();
+            builder.Services.AddTransient<ViewModels.PacienteFormViewModel>();
+            builder.Services.AddTransient<ViewModels.AgendaViewModel>();
+            builder.Services.AddTransient<ViewModels.ConsultaFormViewModel>();
+
+            // Pages
+            builder.Services.AddTransient<Views.PacientesPage>();
+            builder.Services.AddTransient<Views.PacienteFormPage>();
+            builder.Services.AddTransient<Views.AgendaPage>();
+            builder.Services.AddTransient<Views.ConsultaFormPage>();
+
             return builder.Build();
         }
     }

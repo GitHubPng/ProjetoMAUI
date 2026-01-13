@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="AppMAUIGallery.Views.Styles.GlobalStyle"
+    Title="GlobalStyle">
+    <VerticalStackLayout>
+        
+        <Label
+            Text="Artigo 1"
+            Style="{StaticResource Title}"/>
+        <Label
+            Text="Lorem ipsum dolor sit amet. Aut natus optio eum aliquam rerum rem nulla quas. Qui sapiente laborum vel corporis nemo ea ratione veritatis. Non tempora accusantium non voluptatem magni est consectetur nostrum sit consequatur rerum vel excepturi Quis et fugit veniam sit perspiciatis alias. Ex incidunt rerum in aspernatur dolore qui iusto veritatis non optio repudiandae. Sit laborum culpa a mollitia neque est repudiandae pariatur et necessitatibus blanditiis eos consequatur sunt sit molestiae consequuntur." />
+        <Label
+            Text="Est cumque atque ut deserunt suscipit est quis omnis non dolores recusandae. Ab odit rerum sit sequi molestiae et similique perspiciatis et quibusdam debitis. Ut atque aliquam sed eaque velit aut veniam sapiente est odio omnis eum atque laudantium est quae assumenda! Ut labore quia a neque explicabo non blanditiis voluptatem ut nobis culpa et eligendi reprehenderit et enim quis et velit facilis? Et voluptatem magni in nobis vero est atque porro. Qui incidunt omnis vel labore molestiae ut blanditiis eaque qui accusantium quis in autem iusto! Et amet mollitia sit molestiae expedita est assumenda laborum ab quisquam enim et aperiam nulla." />
+    
+    </VerticalStackLayout>
+</ContentPage>

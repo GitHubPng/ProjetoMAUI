@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppMAUIGallery.Views.Lists.BindableLayoutPage"
+             Title="BindableLayoutPage">
+
+    <ScrollView>
+
+        <VerticalStackLayout x:Name="VerticalStackLayoutControl"  BindableLayout.EmptyView="Nenhum registro!">
+
+            <BindableLayout.ItemTemplate>
+
+                <DataTemplate>
+
+                    <Grid
+                        RowDefinitions="Auto, Auto"
+                        ColumnDefinitions="*, 40"
+                        Padding="10">
+
+                        <Label
+                            Text="{Binding Name}"
+                            FontAttributes="Bold"/>
+                        <Label 
+                            Text="{Binding Description}"
+                               Grid.Row="1"
+                               Grid.ColumnSpan="2"
+                               TextColor="Gray"/>
+                        <Label
+                            Text="{Binding LaunchYear}"
+                            Grid.Column="1"/>
+
+                    </Grid>
+
+                </DataTemplate>
+
+            </BindableLayout.ItemTemplate>
+
+            <Label 
+            Text="Welcome to .NET MAUI!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+</ContentPage>
